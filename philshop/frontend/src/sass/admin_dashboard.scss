@@ -1,0 +1,38 @@
+@import "variables.scss";
+@import "mixins.scss";
+.dashboard-page {
+  display: flex;
+  height: 94%;
+
+  .left-panel {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    align-items: center;
+    height: 94vh;
+    width: 250px;
+    background-color: $secondary;
+    color: white;
+
+    .account-picture {
+      font-size: 150px;
+      margin-top: 3rem;
+    }
+    h3 {
+      font-size: 25px;
+      margin: 10px;
+    }
+    ul {
+      li {
+        list-style-type: none;
+        padding: 10px;
+        display: flex;
+        gap: 20px;
+        cursor: pointer;
+      }
+      li:hover {
+        color: $tertiary;
+      }
+    }
+  }
+}

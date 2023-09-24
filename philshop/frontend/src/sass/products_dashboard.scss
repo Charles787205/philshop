@@ -1,0 +1,25 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+.products-dashboard {
+  padding: 2rem;
+
+  .products-options {
+    .row {
+      .col {
+        margin: 10px 5px;
+        cursor: pointer;
+        h2 {
+          color: $secondary;
+        }
+        span {
+          padding: 2px;
+          background-color: $tertiary;
+        }
+      }
+      .col:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}

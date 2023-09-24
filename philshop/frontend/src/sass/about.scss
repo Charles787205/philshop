@@ -1,0 +1,33 @@
+@import "mixins.scss";
+@import "variables.scss";
+.about-page {
+  height: 94vh;
+  .row {
+    justify-content: center;
+  }
+  .hero {
+    align-items: center;
+    padding: 2rem;
+    background-color: rgb(13, 0, 61);
+
+    background: linear-gradient(
+        rgba(58, 0, 165, 0.9) 10%,
+        rgba(0, 0, 0, 0.9) 100%
+      ),
+      url("../assets/macbook.jpeg");
+
+    background-position: center;
+    background-size: contain;
+    border-radius: 0px;
+    color: white;
+    height: 40vh;
+    width: 100vh;
+    p {
+      margin-top: 5rem;
+      width: 40rem;
+    }
+    @include responsive-min($med) {
+      @include add-shadow();
+    }
+  }
+}

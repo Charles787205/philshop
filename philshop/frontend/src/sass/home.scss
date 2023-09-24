@@ -1,0 +1,72 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+.home {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(white, rgb(0, 23, 97, 0.3)); //height: 100%;
+  //overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  .hero {
+    width: 80%;
+    max-width: 1500px;
+    text-align: center;
+    height: 25rem;
+    background: linear-gradient(
+        rgb(0, 23, 97, 0.6) 30%,
+        rgb(0, 23, 97, 0.6) 30%
+      ),
+      url("../assets/grocery.jpg");
+
+    background-position: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h1 {
+      font-size: 80px;
+    }
+  }
+  @include responsive-max($med) {
+    .hero {
+      width: 100%;
+      h1 {
+        font-size: 50px;
+      }
+    }
+  }
+}
+.cart-button {
+  position: fixed;
+  bottom: 1px;
+  right: 1px;
+  margin-right: 5em;
+  border: 1px solid $tertiary;
+  padding: 10px;
+  background-color: $secondary;
+  color: $tertiary;
+  font-size: bold;
+
+  border-radius: 50%;
+  cursor: pointer;
+
+  @include responsive-max($med) {
+    position: fixed;
+    right: 1rem;
+    bottom: 1px;
+  }
+
+  .material-symbols-outlined {
+    font-variation-settings:
+      "FILL" 0,
+      "wght" 500,
+      "GRAD" 0,
+      "opsz" 24;
+  }
+}
+.cart-button:hover {
+  background-color: darken($secondary, 15%);
+}

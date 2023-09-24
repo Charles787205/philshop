@@ -1,0 +1,471 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
+.navbar {
+  display: flex;
+  height: 50px;
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(0, 23, 97);
+  z-index: 100;
+}
+.navbar ul {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  list-style-type: none;
+}
+.navbar ul img {
+  width: 20px;
+  height: 19px;
+  margin: 0px 10px;
+}
+.navbar ul a {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.navbar ul a li {
+  height: 100%;
+}
+.navbar ul li {
+  padding: 10px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  color: white;
+}
+.navbar ul li:hover {
+  background-color: #00124d;
+  color: rgb(96, 215, 255);
+  transform: scale(1.05);
+  border-radius: 5px;
+}
+@media screen and (max-width: 40em) {
+  .navbar ul {
+    display: none;
+  }
+}
+.navbar .hamburger-menu {
+  align-items: center;
+  justify-content: center;
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-left: 10px;
+  padding: 4px;
+}
+.navbar .hamburger-menu span {
+  margin: 2px 0px;
+  display: block;
+  padding: 2px 15px;
+  background-color: gray;
+  border-radius: 5px;
+  transition: 0.2s ease-in-out;
+}
+@media screen and (max-width: 40em) {
+  .navbar .hamburger-menu {
+    display: flex;
+  }
+}
+.navbar .menu-active :first-child {
+  transform: translate(0, 8px) rotate(45deg);
+}
+.navbar .menu-active :nth-child(2) {
+  opacity: 0;
+}
+.navbar .menu-active :nth-child(3) {
+  transform: translate(0, -8px) rotate(-45deg);
+}
+.navbar .mobile-nav {
+  flex-direction: column;
+  position: fixed;
+  background-color: white;
+  top: 50px;
+  left: 0;
+  height: 100%;
+  width: 30vh;
+  transition: 0.3s ease-in;
+  text-decoration: none;
+  list-style-type: none;
+}
+.navbar .mobile-nav li {
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+.navbar .mobile-nav li:hover {
+  background-color: gray;
+}
+.navbar .active {
+  left: 0px;
+}
+.navbar .inactive {
+  left: -41vh;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  background-color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(211, 211, 211);
+}
+
+.shadow-border {
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2), 0px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+#root {
+  width: 100%;
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(white, rgba(0, 23, 97, 0.3));
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.home .hero {
+  width: 80%;
+  max-width: 1500px;
+  text-align: center;
+  height: 25rem;
+  background: linear-gradient(rgba(0, 23, 97, 0.6) 30%, rgba(0, 23, 97, 0.6) 30%), url("../assets/grocery.jpg");
+  background-position: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home .hero h1 {
+  font-size: 80px;
+}
+@media screen and (max-width: 40em) {
+  .home .hero {
+    width: 100%;
+  }
+  .home .hero h1 {
+    font-size: 50px;
+  }
+}
+
+.cart-button {
+  position: fixed;
+  bottom: 1px;
+  right: 1px;
+  margin-right: 5em;
+  border: 1px solid rgb(96, 215, 255);
+  padding: 10px;
+  background-color: rgb(0, 23, 97);
+  color: rgb(96, 215, 255);
+  font-size: bold;
+  border-radius: 50%;
+  cursor: pointer;
+}
+@media screen and (max-width: 40em) {
+  .cart-button {
+    position: fixed;
+    right: 1rem;
+    bottom: 1px;
+  }
+}
+.cart-button .material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 500, "GRAD" 0, "opsz" 24;
+}
+
+.cart-button:hover {
+  background-color: #000515;
+}
+
+.auth-page {
+  width: 100%;
+  height: 100%;
+  display: flow-root;
+  transition: 1s ease-in-out;
+  background: white;
+}
+.auth-page .auth-intro-container {
+  display: flex;
+  width: 90%;
+  margin: 2rem;
+  background-color: white;
+  background: linear-gradient(rgb(29, 28, 28), rgb(0, 23, 97));
+  color: white;
+  border-radius: 1%;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2), 0px 4px 10px rgba(0, 0, 0, 0.4);
+  overflow: auto;
+}
+@media screen and (max-width: 40em) {
+  .auth-page .auth-intro-container {
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    border: none;
+    scroll-snap-type: y mandatory;
+    box-shadow: none;
+    overflow: auto;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0px;
+    background: linear-gradient(rgb(29, 28, 28), rgb(0, 23, 97), rgb(29, 28, 28));
+  }
+}
+.auth-page .hero {
+  padding: 5rem;
+  border-radius: 20%;
+  height: 100%;
+}
+.auth-page .hero .title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.auth-page .hero p {
+  font-size: 1.25rem;
+  font-weight: lighter;
+}
+@media screen and (max-width: 40em) {
+  .auth-page .hero {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    scroll-snap-align: start;
+    padding: 1rem;
+    text-align: center;
+    margin: 0px;
+    justify-content: center;
+  }
+  .auth-page .hero .title {
+    font-size: 2.25rem;
+    font-weight: bold;
+  }
+  .auth-page .hero .p {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 40em) and (max-width: 50em) {
+  .auth-page .hero {
+    padding: 2rem;
+  }
+  .auth-page .hero .title {
+    font-size: 2rem;
+  }
+  .auth-page .hero p {
+    font-size: 1.1rem;
+  }
+}
+.auth-page .auth-container {
+  display: block;
+  opacity: 1;
+  flex: none;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+@media screen and (max-width: 40em) {
+  .auth-page .auth-container {
+    scroll-snap-align: start;
+    height: 100vh;
+    padding: 2rem;
+  }
+}
+.auth-page .auth-container .auth-buttons h3 {
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  border-bottom: solid 3px white;
+}
+.auth-page .auth-container .auth-buttons h3:hover {
+  transform: scale(1.05);
+}
+.auth-page .auth-container .auth-buttons .selected {
+  border-bottom: solid 3px rgb(96, 215, 255);
+}
+.auth-page .auth-container .login-container,
+.auth-page .auth-container .register-container {
+  margin: 2rem;
+}
+.auth-page .auth-container .login-container .col,
+.auth-page .auth-container .register-container .col {
+  padding: 10px 0px;
+}
+.auth-page .auth-container .login-container .col input,
+.auth-page .auth-container .register-container .col input {
+  font-size: 15px;
+  width: 15rem;
+  margin: 10px 0px;
+  padding: 10px;
+  border-radius: 5px;
+  border: solid 1px gray;
+}
+.auth-page .auth-container .login-container .col label,
+.auth-page .auth-container .register-container .col label {
+  font-size: 18px;
+}
+.auth-page .auth-container .login-container button,
+.auth-page .auth-container .register-container button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2), 0px 4px 10px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  color: rgb(0, 23, 97);
+  font-size: 15px;
+  font-weight: bold;
+}
+.auth-page .auth-container .login-container button:hover,
+.auth-page .auth-container .register-container button:hover {
+  background-color: rgb(96, 215, 255);
+  transform: scale(1.05);
+}
+@media screen and (min-width: 40em) and (max-width: 50em) {
+  .auth-page .auth-container .login-container,
+  .auth-page .auth-container .register-container {
+    margin: 0.5rem;
+  }
+  .auth-page .auth-container .login-container .col input,
+  .auth-page .auth-container .register-container .col input {
+    width: 11rem;
+  }
+}
+.auth-page .auth-container .hide {
+  height: 0px;
+  opacity: 0;
+  margin: 0px;
+  left: -1000px;
+  transition: all 1s ease;
+  z-index: -1;
+  position: absolute;
+  top: 0px;
+}
+.auth-page .auth-container .visible {
+  position: relative;
+  z-index: 10;
+  display: block;
+  opacity: 1;
+  left: 0px;
+  transition: all 1s ease;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.about-page {
+  height: 94vh;
+}
+.about-page .row {
+  justify-content: center;
+}
+.about-page .hero {
+  align-items: center;
+  padding: 2rem;
+  background-color: rgb(13, 0, 61);
+  background: linear-gradient(rgba(58, 0, 165, 0.9) 10%, rgba(0, 0, 0, 0.9) 100%), url("../assets/macbook.jpeg");
+  background-position: center;
+  background-size: contain;
+  border-radius: 0px;
+  color: white;
+  height: 40vh;
+  width: 100vh;
+}
+.about-page .hero p {
+  margin-top: 5rem;
+  width: 40rem;
+}
+@media screen and (min-width: 40em) {
+  .about-page .hero {
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2), 0px 4px 10px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.dashboard-page {
+  display: flex;
+  height: 94%;
+}
+.dashboard-page .left-panel {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  align-items: center;
+  height: 94vh;
+  width: 250px;
+  background-color: rgb(0, 23, 97);
+  color: white;
+}
+.dashboard-page .left-panel .account-picture {
+  font-size: 150px;
+  margin-top: 3rem;
+}
+.dashboard-page .left-panel h3 {
+  font-size: 25px;
+  margin: 10px;
+}
+.dashboard-page .left-panel ul li {
+  list-style-type: none;
+  padding: 10px;
+  display: flex;
+  gap: 20px;
+  cursor: pointer;
+}
+.dashboard-page .left-panel ul li:hover {
+  color: rgb(96, 215, 255);
+}
+
+.products-dashboard {
+  padding: 2rem;
+}
+.products-dashboard .products-options .row .col {
+  margin: 10px 5px;
+  cursor: pointer;
+}
+.products-dashboard .products-options .row .col h2 {
+  color: rgb(0, 23, 97);
+}
+.products-dashboard .products-options .row .col span {
+  padding: 2px;
+  background-color: rgb(96, 215, 255);
+}
+.products-dashboard .products-options .row .col:hover {
+  transform: scale(1.05);
+}
+
+/*# sourceMappingURL=style.css.map */

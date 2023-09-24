@@ -1,0 +1,38 @@
+@use "variables.scss";
+
+@mixin responsive($min, $max) {
+  @media screen and (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+@mixin responsive-min($min) {
+  @media screen and (min-width: $min) {
+    @content;
+  }
+}
+@mixin responsive-max($max) {
+  @media screen and (max-width: $max) {
+    @content;
+  }
+}
+@mixin add-shadow() {
+  box-shadow:
+    0px 1px 5px rgba(0, 0, 0, 0.2),
+    0px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+@mixin columns($count, $width) {
+  -webkit-column-count: $count; /* Chrome, Safari, Opera */
+  -moz-column-count: $count; /* Firefox */
+  column-count: $count;
+
+  -webkit-column-width: $width; /* Chrome, Safari, Opera */
+  -moz-column-width: $width; /* Firefox */
+  column-width: $width;
+}
+
+@mixin page-break-inside($rule) {
+  -webkit-column-break-inside: $rule; /* Chrome, Safari, Opera */
+  page-break-inside: $rule; /* Firefox */
+  break-inside: $rule; /* IE 10+ */
+}
